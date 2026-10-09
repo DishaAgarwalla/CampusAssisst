@@ -1,104 +1,87 @@
 # 🎓 CampusAssisst — AI College Helpdesk Chatbot
 
 <p align="center">
-  <strong>A Simple, Interactive College Helpdesk Chatbot Built with Python and Flask</strong>
+  <strong>An Interactive AI-Powered College Helpdesk Chatbot Built with Python, Flask, and the ChatGPT API</strong>
 </p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3.10%2B-blue?logo=python" alt="Python">
   <img src="https://img.shields.io/badge/Flask-Web%20Framework-black?logo=flask" alt="Flask">
+  <img src="https://img.shields.io/badge/OpenAI-ChatGPT%20API-412991?logo=openai" alt="OpenAI">
   <img src="https://img.shields.io/badge/HTML5-Frontend-orange?logo=html5" alt="HTML5">
   <img src="https://img.shields.io/badge/CSS3-Styling-blue?logo=css3" alt="CSS3">
   <img src="https://img.shields.io/badge/JavaScript-Interactive-yellow?logo=javascript" alt="JavaScript">
-  <img src="https://img.shields.io/badge/Status-Completed-success" alt="Project Status">
 </p>
 
 ## 📌 About the Project
 
-**CampusAssisst** is a lightweight, web-based college helpdesk chatbot designed to answer common student queries through a simple and interactive chat interface.
+**CampusAssisst** is a web-based AI college helpdesk chatbot designed to help students get answers to common college-related questions through a simple and interactive chat interface.
 
-Students can ask questions about admissions, departments, timetables, examinations, attendance, courses, faculty, campus facilities, placements, and scholarships. The chatbot processes questions using predefined intent-matching logic and retrieves relevant information from a JSON-based knowledge base.
+Students can ask questions about admissions, departments, timetables, examinations, attendance, courses, faculty, campus facilities, placements, and scholarships. The chatbot uses the **ChatGPT API** to understand questions written in natural language and generate relevant, conversational responses.
 
-The project uses Python and Flask for backend processing, along with HTML, CSS, and JavaScript for the frontend. It is designed as a beginner-friendly academic project that demonstrates the fundamentals of chatbot development and web application integration without requiring paid APIs or external AI services.
+The project uses Python and Flask for backend processing, HTML, CSS, and JavaScript for the frontend, and the OpenAI API to power its conversational capabilities. It aims to make college information easier to access through an AI-powered assistant.
 
 ## 🎯 Objectives
 
-* Provide quick answers to frequently asked college-related questions.
-* Create a simple and user-friendly chatbot interface.
-* Organize college information in a structured JSON file.
-* Use Python and Flask to handle user queries and generate responses.
-* Demonstrate communication between frontend and backend components.
-* Avoid paid API subscriptions and external AI service dependencies.
-* Provide a clear fallback response when the requested information is unavailable.
+* Provide quick and conversational answers to college-related questions.
+* Develop an interactive and user-friendly chatbot interface.
+* Use the ChatGPT API to understand and respond to natural-language questions.
+* Integrate an AI service with a Python Flask web application.
+* Connect frontend interactions with backend API processing.
+* Handle questions for which reliable information is unavailable.
+* Demonstrate the practical application of AI in a college helpdesk system.
 
 ## ✨ Features
 
-* **Interactive Chat Interface:** Students can ask questions through a conversational interface.
-* **Multiple Query Categories:** Covers admissions, departments, timetables, examinations, attendance, courses, faculty, facilities, placements, and scholarships.
-* **Intent Detection:** Uses keyword and phrase matching to identify the likely topic of a question.
-* **JSON-Based Knowledge Base:** Stores college-related information in `college_data.json`.
-* **Fallback Responses:** Returns `I don't have that information.` when the chatbot cannot provide a supported answer.
-* **Conversation History:** Displays messages during the current chat session.
+* **AI-Powered Conversations:** Uses the ChatGPT API to generate natural-language responses.
+* **Multiple Query Categories:** Supports questions about admissions, departments, timetables, examinations, attendance, courses, faculty, campus facilities, placements, and scholarships.
+* **Natural-Language Understanding:** Allows students to ask questions in their own words.
+* **Interactive Chat Interface:** Provides a conversational interface for sending questions and receiving answers.
+* **Conversation History:** Displays messages exchanged during the current chat session.
 * **Message Timestamps:** Shows the time associated with chat messages.
-* **Suggested Questions:** Offers example questions to help students explore available information.
-* **Formatted Responses:** Displays answers in a readable format, including lists where appropriate.
-* **No Paid API Required:** Runs using local application logic and predefined data.
-* **Lightweight Setup:** Suitable for development and demonstration in Visual Studio Code.
+* **Suggested Questions:** Helps students discover topics they can ask about.
+* **Formatted Responses:** Presents answers in a readable format, including lists where appropriate.
+* **Fallback Handling:** Provides an appropriate response when the chatbot cannot answer a question reliably.
+* **Modular Architecture:** Separates backend logic, frontend presentation, and chatbot interactions.
+* **Secure API Configuration:** Supports storing the API key in an environment variable instead of exposing it in source code.
 
 ## 🛠️ Technology Stack
 
-| Technology         | Purpose                                      |
-| ------------------ | -------------------------------------------- |
-| Python             | Backend programming and chatbot logic        |
-| Flask              | Web server and HTTP request handling         |
-| HTML5              | Structure of the chatbot interface           |
-| CSS3               | Layout, styling, and responsive presentation |
-| JavaScript         | Chat interactions and frontend behavior      |
-| JSON               | Storage of predefined college information    |
-| Git and GitHub     | Version control and project hosting          |
-| Visual Studio Code | Development environment                      |
+| Technology         | Purpose                                                   |
+| ------------------ | --------------------------------------------------------- |
+| Python             | Backend programming and application logic                 |
+| Flask              | Web server and HTTP request handling                      |
+| OpenAI ChatGPT API | Natural-language understanding and AI-generated responses |
+| HTML5              | Structure of the chatbot interface                        |
+| CSS3               | Styling and responsive presentation                       |
+| JavaScript         | Chat interactions and frontend behavior                   |
+| JSON               | Structured data storage, if required by the application   |
+| Git and GitHub     | Version control and project hosting                       |
+| Visual Studio Code | Development environment                                   |
 
 ## 🧠 How It Works
 
 1. The student enters a question in the chatbot interface.
 2. JavaScript sends the question to the Flask backend.
-3. The backend normalizes the text and checks for relevant keywords and phrases.
-4. The chatbot identifies the most likely intent or topic.
-5. The application retrieves a suitable response from its predefined logic and JSON knowledge base.
-6. Flask returns the response to the frontend.
-7. JavaScript displays the answer in the chat interface, along with the available message details and suggested questions.
+3. The backend receives and processes the request.
+4. Flask sends the question to the ChatGPT API using the configured model and API credentials.
+5. The AI generates a response based on the question and the instructions provided to it.
+6. The backend returns the response to the frontend.
+7. JavaScript displays the answer in the chat interface, along with relevant message details and suggested questions where supported.
 
-If the chatbot cannot identify a suitable answer, it returns a predefined fallback message rather than inventing college information.
-
-**Note:** CampusAssisst is a rule-based chatbot, not a generative AI or large language model application. Its responses depend on the implemented rules and available data.
-
-## 📚 Supported Query Categories
-
-| Category          | Example Question                            |
-| ----------------- | ------------------------------------------- |
-| Admissions        | How can I apply for admission?              |
-| Departments       | Which departments are available?            |
-| Timetable         | When will the timetable be announced?       |
-| Examination       | When are the examinations?                  |
-| Attendance        | Where can I get attendance information?     |
-| Courses           | What courses are available?                 |
-| Faculty           | How can I contact the faculty?              |
-| Campus Facilities | What facilities are available on campus?    |
-| Placement         | What placement opportunities are available? |
-| Scholarships      | What scholarship information is available?  |
-
-*The actual answers depend on the data and rules implemented in the project.*
+The chatbot can be configured to focus on college-related questions and respond appropriately when information is unavailable. For institution-specific accuracy, verified college information should be supplied to the application or made accessible to the AI through an appropriate data source.
 
 ## 📂 Project Structure
 
 ```text
 CampusAssisst/
 │
-├── app.py                  # Flask application and chatbot logic
-├── college_data.json       # College information and response data
+├── app.py                  # Flask application and AI integration
+├── college_data.json       # College-related data, if used
 ├── requirements.txt        # Python dependencies
 ├── .gitignore              # Files excluded from Git
 ├── README.md               # Project documentation
+├── .env                    # API key and environment variables (not uploaded)
 │
 ├── templates/
 │   └── index.html          # Chatbot webpage
@@ -110,8 +93,10 @@ CampusAssisst/
 │   └── js/
 │       └── script.js       # Frontend interaction logic
 │
-└── venv/                   # Local virtual environment (not uploaded)
+└── venv/                   # Local Python virtual environment (not uploaded)
 ```
+
+*Note: `.env` is only needed if the application uses environment variables for configuration. It and `venv/` should be excluded from Git using `.gitignore`.*
 
 ## ⚙️ Installation and Setup
 
@@ -123,6 +108,7 @@ Before running the project, ensure you have installed:
 * Visual Studio Code
 * Git (optional, for cloning the repository)
 * A modern web browser
+* An OpenAI API key with API access and available billing or credits as required
 
 ### 1. Clone the Repository
 
@@ -162,13 +148,35 @@ venv\Scripts\activate.bat
 pip install -r requirements.txt
 ```
 
-### 6. Run the Application
+Ensure that `requirements.txt` includes the packages required by your application, such as Flask, the OpenAI Python SDK, and `python-dotenv` if you use a `.env` file.
+
+If the required packages are not already listed, install them with:
+
+```bash
+pip install flask openai python-dotenv
+```
+
+### 6. Configure the OpenAI API Key
+
+Create a `.env` file in the project root directory and add your API key:
+
+```env
+OPENAI_API_KEY=your_api_key_here
+```
+
+Replace `your_api_key_here` with your own API key.
+
+**Important:** Never upload your API key to GitHub or place it directly in frontend JavaScript. Keep `.env` in `.gitignore` and make API requests from the backend.
+
+The ChatGPT API is billed separately from a ChatGPT subscription. API access may require billing or available credits; do not assume that API usage is free.
+
+### 7. Run the Application
 
 ```bash
 python app.py
 ```
 
-### 7. Open the Chatbot
+### 8. Open the Chatbot
 
 Open your browser and visit the local address printed by Flask in the terminal. If the application uses Flask's default development settings, this is usually:
 
@@ -180,61 +188,16 @@ You can now start asking questions through the CampusAssisst chat interface.
 
 ## 💬 Example Interaction
 
-**Student:** Which departments are available?
+**Student:** What departments are available in a college?
 
-**CampusAssisst:** Lists the departments configured in the application's knowledge base.
+**CampusAssisst:** The AI generates a conversational answer based on the context available to it.
 
-**Student:** What facilities are available on campus?
+**Student:** How can I find out about scholarships?
 
-**CampusAssisst:** Provides the campus facility information configured in the project.
+**CampusAssisst:** The AI can explain general scholarship options and provide relevant guidance. For accurate information about a particular college's scholarships, the application should provide verified institutional details.
 
-**Student:** What is the hostel fee?
+*Example responses depend on the API integration, model configuration, and instructions implemented in the application.*
 
-**CampusAssisst:** I don't have that information.
-
-*These examples illustrate the intended behavior. Responses depend on the current application data and implementation.*
-
-## 🔧 Customization
-
-You can customize CampusAssisst by editing the following files:
-
-* **`college_data.json`** — Add, update, or remove college information.
-* **`app.py`** — Modify intent detection, response handling, and backend logic.
-* **`templates/index.html`** — Update the structure of the chat interface.
-* **`static/css/style.css`** — Change colors, spacing, typography, and layout.
-* **`static/js/script.js`** — Improve chat interactions, timestamps, suggestions, and message rendering.
-* **`requirements.txt`** — Maintain the Python packages required to run the application.
-
-To provide reliable answers, keep the knowledge base accurate and ensure the chatbot rules cover the questions you want to support.
-
-## 🔐 Privacy and API Requirements
-
-* No paid OpenAI API key is required.
-* No Ollama installation is required.
-* The chatbot uses its own predefined logic and local JSON data.
-* The application is intended for local academic demonstration unless separately configured for deployment.
-* Do not add real student records, passwords, or other sensitive information to the repository.
-
-## 🚧 Limitations
-
-* The chatbot does not generate answers using a large language model.
-* It may not understand questions phrased in unexpected ways.
-* Its responses are limited to implemented rules and available college information.
-* It does not automatically retrieve live college notices, timetables, attendance records, or placement updates.
-* The accuracy of responses depends on the completeness of the knowledge base.
-* Conversation history is not necessarily persistent across browser sessions.
-
-## 🚀 Future Enhancements
-
-Potential improvements include:
-
-* Expanding the knowledge base with verified college information.
-* Improving intent matching and handling of alternative question phrasings.
-* Adding an administrator interface for updating college data.
-* Integrating a college notice or timetable management system.
-* Adding persistent chat history if required.
-* Supporting multiple languages.
-* Deploying the application so students can access it online.
 
 ## 🎓 Learning Outcomes
 
@@ -242,19 +205,15 @@ This project provides practical experience with:
 
 * Python application development.
 * Flask routes and HTTP request-response handling.
+* OpenAI API integration.
+* Natural-language chatbot development.
 * Frontend and backend integration.
 * JavaScript-based chat interfaces.
+* Environment variables and API key security.
 * JSON data management.
-* Basic intent detection and text processing.
 * Git, GitHub, and project documentation.
-* Error handling and fallback responses.
+* Error handling and external API communication.
 
-## 👩‍💻 Author
-
-**Disha Agarwalla**
-
-* GitHub: [@DishaAgarwalla](https://github.com/DishaAgarwalla)
-* LinkedIn: [Disha Agarwalla](https://www.linkedin.com/in/disha-agarwalla-10884b31b/)
 
 ## 📄 License
 
@@ -263,5 +222,5 @@ This project is intended for educational and academic purposes. A formal open-so
 ---
 
 <p align="center">
-  <strong>CampusAssisst — Making College Information Easier to Access.</strong>
+  <strong>CampusAssisst — Making College Information Easier to Access with AI.</strong>
 </p>
