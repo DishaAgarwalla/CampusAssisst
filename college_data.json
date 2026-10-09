@@ -1,0 +1,116 @@
+{
+    "admissions": {
+        "title": "Admissions",
+        "information": {
+            "general": "Admissions are conducted according to the eligibility criteria specified by the college. Students should check the official college admission notice for the latest admission information.",
+            "procedure": "Students can apply for admission by following the application and admission procedure specified by the college.",
+            "documents": "Students may need academic certificates, identification proof, passport-size photographs and other required documents during admission.",
+            "eligibility": "Admission eligibility may vary depending on the selected course and department. Students should check the official admission notice for the exact eligibility requirements.",
+            "application": "Students should follow the official college admission instructions to complete the application process."
+        }
+    },
+
+    "departments": {
+        "title": "Departments",
+        "information": {
+            "general": "The college offers departments such as Computer Science, Information Technology, Electronics and Communication, Mechanical Engineering and Civil Engineering.",
+            "branches": "Students can choose from different engineering branches depending on the courses and departments offered by the college.",
+            "streams": "Different academic streams and fields of study are available through the various departments of the college.",
+            "fields": "The college offers fields of study related to areas such as Computer Science, Information Technology, Electronics and Communication, Mechanical Engineering and Civil Engineering."
+        }
+    },
+
+    "timetable": {
+        "title": "Timetable",
+        "information": {
+            "general": "The class timetable is prepared and published by the respective department.",
+            "schedule": "Students should check their department notice board or student portal for the latest class schedule.",
+            "timings": "Class and lecture timings are provided in the timetable published by the respective department.",
+            "changes": "The timetable may change due to examinations, holidays, events or other academic activities.",
+            "location": "Students can find the latest timetable through their department notice board, student portal or official college notice."
+        }
+    },
+
+    "examination": {
+        "title": "Examination",
+        "information": {
+            "general": "The examination department is responsible for publishing official examination-related information.",
+            "schedule": "Examination schedules are announced by the examination department. Students should check official examination notices for examination dates and timings.",
+            "dates": "Students should refer to the official examination notice for the latest examination dates.",
+            "timings": "Examination timings are provided in the official examination schedule published by the college.",
+            "documents": "Students should carry the required examination documents or identity card as instructed by the college.",
+            "instructions": "Students should follow the instructions provided by the examination department before and during examinations."
+        }
+    },
+
+    "attendance": {
+        "title": "Attendance",
+        "information": {
+            "general": "Students are expected to maintain the minimum attendance required by the college.",
+            "requirement": "Attendance requirements may vary according to college rules and academic regulations. Students should check the official attendance policy for the exact requirement.",
+            "recording": "Attendance records are maintained by the respective faculty members or departments.",
+            "checking": "Students should regularly check their attendance status through the student portal or by contacting their department.",
+            "absence": "Students who are absent should follow the attendance and leave procedures specified by their department or college."
+        }
+    },
+
+    "courses": {
+        "title": "Courses",
+        "information": {
+            "general": "The college offers undergraduate and postgraduate courses in different academic and technical disciplines.",
+            "subjects": "Courses are divided into subjects that students study during their academic semesters. The subjects may vary depending on the selected course and department.",
+            "structure": "The course structure contains the subjects and academic requirements that students need to complete during their program.",
+            "syllabus": "Students should contact their department or check the official college resources for the complete and latest syllabus.",
+            "degree": "The college offers different degree programs depending on the available departments and academic disciplines."
+        }
+    },
+
+    "faculty": {
+        "title": "Faculty",
+        "information": {
+            "general": "Faculty members are assigned to different departments and courses. They are responsible for teaching subjects and conducting academic activities.",
+            "teaching": "Faculty members teach subjects, conduct classes and support students in their academic activities.",
+            "contact": "Students can contact their respective department for faculty details and official contact information.",
+            "department": "Faculty members are associated with different academic departments according to the subjects and courses they teach.",
+            "information": "Students should contact the respective department for the latest faculty information because faculty details may change over time."
+        }
+    },
+
+    "facilities": {
+        "title": "Campus Facilities",
+        "information": {
+            "general": "The campus provides facilities such as classrooms, laboratories, a library, computer labs and recreational areas.",
+            "library": "The college library provides students with access to academic books and other learning resources.",
+            "computer_labs": "Computer laboratories are available for practical classes and academic activities.",
+            "laboratories": "The college provides laboratories for practical learning and academic activities related to different departments.",
+            "classrooms": "Classrooms are provided for lectures and academic activities.",
+            "sports": "Students can contact the college administration for information about sports and recreational facilities.",
+            "canteen": "Students can contact the college administration for the latest information about campus food and canteen facilities."
+        }
+    },
+
+    "placement": {
+        "title": "Placement",
+        "information": {
+            "general": "The college provides placement assistance through its placement department.",
+            "recruitment": "Placement activities may include company recruitment drives where eligible students can participate in hiring processes.",
+            "training": "Students may receive training related to aptitude, communication skills, technical skills and interview preparation.",
+            "opportunities": "Placement opportunities may include company recruitment drives, interviews and other campus hiring activities.",
+            "companies": "Students should contact the placement department for the latest information about participating companies and recruitment drives.",
+            "eligibility": "Placement eligibility may vary depending on the course, department and requirements specified by participating companies.",
+            "interviews": "Placement activities may include technical interviews, aptitude tests, communication assessments and other recruitment rounds."
+        }
+    },
+
+    "scholarships": {
+        "title": "Scholarships",
+        "information": {
+            "general": "Eligible students may apply for scholarships according to the available scholarship schemes.",
+            "eligibility": "Scholarship eligibility may depend on academic performance, financial circumstances or other criteria specified by the scholarship provider.",
+            "application": "Students should check official scholarship notices for application procedures, eligibility criteria and deadlines.",
+            "documents": "Students may need academic certificates, identification documents and other supporting documents when applying for a scholarship.",
+            "financial_assistance": "Financial assistance may be available through different scholarship schemes depending on student eligibility and the available programs.",
+            "deadlines": "Scholarship application deadlines may vary depending on the scholarship scheme. Students should check official scholarship notices for the latest deadlines."
+        }
+    }
+}

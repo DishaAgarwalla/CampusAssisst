@@ -1,0 +1,526 @@
+/* ==========================================
+   CampusAssist — College Helpdesk Chatbot
+   Styles
+========================================== */
+
+
+/* ==========================================
+   Design Tokens
+========================================== */
+:root {
+    --brand-500: #4f46e5;
+    --brand-600: #4338ca;
+    --brand-700: #3730a3;
+    --brand-soft: #eef2ff;
+    --brand-border: #c7d2fe;
+
+    --bg-page: #eef2f7;
+    --bg-surface: #ffffff;
+    --bg-chat: #f8fafc;
+    --bg-bot: #e5e7eb;
+    --bg-input: #ffffff;
+
+    --text-primary: #1f2937;
+    --text-secondary: #64748b;
+    --text-muted: #94a3b8;
+    --text-on-brand: #ffffff;
+
+    --border-soft: #e2e8f0;
+    --border-input: #cbd5e1;
+
+    --shadow-md: 0 8px 30px rgba(15, 23, 42, 0.12);
+    --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.06);
+
+    --radius-lg: 18px;
+    --radius-md: 12px;
+    --radius-sm: 10px;
+
+    --transition: 0.2s ease;
+}
+
+/* Dark Mode */
+body.dark {
+    --bg-page: #0b1120;
+    --bg-surface: #111827;
+    --bg-chat: #0f172a;
+    --bg-bot: #1e293b;
+    --bg-input: #1e293b;
+
+    --text-primary: #e2e8f0;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+
+    --border-soft: #1e293b;
+    --border-input: #334155;
+}
+
+
+/* ==========================================
+   Reset & Base
+========================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+    background: var(--bg-page);
+    color: var(--text-primary);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    transition: background var(--transition);
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(circle at 15% 20%, rgba(79, 70, 229, 0.12), transparent 45%),
+        radial-gradient(circle at 85% 80%, rgba(99, 102, 241, 0.10), transparent 45%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+
+/* ==========================================
+   Chat Container
+========================================== */
+.chat-container {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 760px;
+    height: 88vh;
+    min-height: 560px;
+    background: var(--bg-surface);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: background var(--transition);
+}
+
+
+/* ==========================================
+   Chat Header
+========================================== */
+.chat-header {
+    background: linear-gradient(135deg, var(--brand-500) 0%, #6366f1 100%);
+    color: var(--text-on-brand);
+    padding: 18px 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    min-width: 0;
+}
+
+.header-icon {
+    width: 48px;
+    height: 48px;
+    background: rgba(255, 255, 255, 0.18);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    backdrop-filter: blur(6px);
+    flex-shrink: 0;
+}
+
+.header-content h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 2px;
+    letter-spacing: -0.01em;
+}
+
+.header-content p {
+    font-size: 13px;
+    opacity: 0.92;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.status-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #4ade80;
+    box-shadow: 0 0 0 3px rgba(74, 222, 128, 0.25);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50%      { opacity: 0.55; }
+}
+
+.header-actions {
+    display: flex;
+    gap: 6px;
+}
+
+.icon-button {
+    background: rgba(255, 255, 255, 0.15);
+    border: none;
+    color: white;
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background var(--transition), transform var(--transition);
+}
+
+.icon-button:hover {
+    background: rgba(255, 255, 255, 0.28);
+    transform: translateY(-1px);
+}
+
+.icon-button:active {
+    transform: translateY(0);
+}
+
+
+/* ==========================================
+   Chat Box
+========================================== */
+.chat-box {
+    flex: 1;
+    padding: 22px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    background: var(--bg-chat);
+    scroll-behavior: smooth;
+    transition: background var(--transition);
+}
+
+
+/* ==========================================
+   Message Layout
+========================================== */
+.message-container {
+    display: flex;
+    gap: 10px;
+    max-width: 82%;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.bot-container {
+    align-self: flex-start;
+    align-items: flex-start;
+}
+
+.user-container {
+    align-self: flex-end;
+    flex-direction: row-reverse;
+}
+
+.message-content {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.user-container .message-content {
+    align-items: flex-end;
+}
+
+
+/* ==========================================
+   Avatars
+========================================== */
+.avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+    flex-shrink: 0;
+    box-shadow: var(--shadow-sm);
+}
+
+.bot-avatar {
+    background: linear-gradient(135deg, var(--brand-500), #6366f1);
+    color: white;
+}
+
+.user-avatar {
+    background: linear-gradient(135deg, #0ea5e9, #38bdf8);
+    color: white;
+}
+
+
+/* ==========================================
+   Message Bubbles
+========================================== */
+.message {
+    padding: 12px 16px;
+    border-radius: 16px;
+    line-height: 1.55;
+    font-size: 15px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.bot-message {
+    background: var(--bg-bot);
+    color: var(--text-primary);
+    border-bottom-left-radius: 4px;
+}
+
+.user-message {
+    background: linear-gradient(135deg, var(--brand-500), #6366f1);
+    color: var(--text-on-brand);
+    border-bottom-right-radius: 4px;
+}
+
+.bot-message p {
+    margin-bottom: 6px;
+}
+
+.bot-message p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* ==========================================
+   Timestamp
+========================================== */
+.message-time {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-top: 4px;
+    padding: 0 4px;
+}
+
+
+/* ==========================================
+   Typing Indicator
+========================================== */
+.typing-indicator {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 14px 18px;
+    background: var(--bg-bot);
+    border-radius: 16px;
+    border-bottom-left-radius: 4px;
+}
+
+.typing-indicator span {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--text-muted);
+    animation: typing 1.2s infinite ease-in-out;
+}
+
+.typing-indicator span:nth-child(2) { animation-delay: 0.15s; }
+.typing-indicator span:nth-child(3) { animation-delay: 0.30s; }
+
+@keyframes typing {
+    0%, 60%, 100% { transform: translateY(0); opacity: 0.5; }
+    30%           { transform: translateY(-5px); opacity: 1; }
+}
+
+
+/* ==========================================
+   Suggestions
+========================================== */
+.suggestions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    max-width: 88%;
+    margin-top: -4px;
+    animation: fadeIn 0.3s ease;
+}
+
+.suggestions-title {
+    font-size: 12px;
+    color: var(--text-secondary);
+    margin-bottom: 2px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.suggestion-button {
+    background: var(--bg-surface);
+    color: var(--brand-500);
+    border: 1px solid var(--brand-border);
+    border-radius: 20px;
+    padding: 9px 15px;
+    font-size: 13px;
+    font-family: inherit;
+    cursor: pointer;
+    text-align: left;
+    transition: background var(--transition),
+                border-color var(--transition),
+                transform var(--transition);
+}
+
+.suggestion-button:hover {
+    background: var(--brand-soft);
+    border-color: var(--brand-500);
+    transform: translateY(-1px);
+}
+
+.suggestion-button:active {
+    transform: translateY(0);
+}
+
+
+/* ==========================================
+   Input Area
+========================================== */
+.input-area {
+    display: flex;
+    gap: 10px;
+    padding: 14px 16px;
+    border-top: 1px solid var(--border-soft);
+    background: var(--bg-surface);
+    transition: background var(--transition);
+}
+
+#user-input {
+    flex: 1;
+    padding: 13px 16px;
+    border: 1px solid var(--border-input);
+    border-radius: var(--radius-sm);
+    font-size: 15px;
+    font-family: inherit;
+    color: var(--text-primary);
+    background: var(--bg-input);
+    outline: none;
+    transition: border-color var(--transition),
+                box-shadow var(--transition),
+                background var(--transition);
+}
+
+#user-input:focus {
+    border-color: var(--brand-500);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+}
+
+#user-input::placeholder {
+    color: var(--text-muted);
+}
+
+
+/* ==========================================
+   Send Button
+========================================== */
+#send-btn {
+    padding: 13px 22px;
+    border: none;
+    border-radius: var(--radius-sm);
+    background: linear-gradient(135deg, var(--brand-500), #6366f1);
+    color: white;
+    font-size: 15px;
+    font-family: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background var(--transition),
+                transform var(--transition),
+                opacity var(--transition);
+}
+
+#send-btn:hover:not(:disabled) {
+    background: linear-gradient(135deg, var(--brand-600), var(--brand-500));
+    transform: translateY(-1px);
+}
+
+#send-btn:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+#send-btn:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+.send-icon { display: none; }
+
+
+/* ==========================================
+   Scrollbar
+========================================== */
+.chat-box::-webkit-scrollbar { width: 7px; }
+.chat-box::-webkit-scrollbar-track { background: transparent; }
+.chat-box::-webkit-scrollbar-thumb {
+    background: var(--border-input);
+    border-radius: 10px;
+}
+.chat-box::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+
+
+/* ==========================================
+   Responsive
+========================================== */
+@media (max-width: 600px) {
+    body { padding: 0; }
+
+    .chat-container {
+        height: 100vh;
+        min-height: 100vh;
+        border-radius: 0;
+    }
+
+    .chat-header { padding: 14px 16px; }
+
+    .header-icon { width: 42px; height: 42px; font-size: 21px; }
+    .header-content h1 { font-size: 18px; }
+    .header-content p { font-size: 11px; }
+
+    .icon-button { width: 32px; height: 32px; font-size: 13px; }
+
+    .chat-box { padding: 16px; gap: 14px; }
+
+    .message-container { max-width: 92%; }
+    .message { font-size: 14px; padding: 11px 14px; }
+    .avatar { width: 32px; height: 32px; font-size: 15px; }
+
+    .suggestions { max-width: 96%; }
+    .suggestion-button { font-size: 12px; padding: 8px 12px; }
+
+    .input-area { padding: 12px; }
+    #user-input { font-size: 14px; padding: 12px 14px; }
+
+    #send-btn { padding: 12px; width: 46px; justify-content: center; }
+    .send-text { display: none; }
+    .send-icon { display: inline; font-size: 15px; }
+}

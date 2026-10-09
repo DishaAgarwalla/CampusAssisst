@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="CampusAssist — AI College Helpdesk Chatbot. Get instant answers about admissions, courses, exams, placements and more." />
+    <title>CampusAssist — College Helpdesk Chatbot</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+</head>
+
+<body>
+
+    <div class="chat-container" role="main">
+
+        <!-- ==========================================
+             Chat Header
+        =========================================== -->
+        <header class="chat-header">
+            <div class="header-left">
+                <div class="header-icon" aria-hidden="true">🎓</div>
+                <div class="header-content">
+                    <h1>CampusAssist</h1>
+                    <p>
+                        <span class="status-dot" aria-hidden="true"></span>
+                        Online — Your College Helpdesk Assistant
+                    </p>
+                </div>
+            </div>
+
+            <div class="header-actions">
+                <button id="theme-toggle" class="icon-button" title="Toggle dark mode" aria-label="Toggle dark mode">🌙</button>
+                <button id="export-chat" class="icon-button" title="Export chat" aria-label="Export chat">⬇️</button>
+                <button id="clear-chat" class="icon-button" title="Clear chat" aria-label="Clear chat">🗑️</button>
+            </div>
+        </header>
+
+
+        <!-- ==========================================
+             Chat Area
+        =========================================== -->
+        <div id="chat-box" class="chat-box" aria-live="polite">
+
+            <!-- Initial welcome message -->
+            <div class="message-container bot-container">
+                <div class="avatar bot-avatar" aria-hidden="true">🎓</div>
+                <div class="message-content">
+                    <div class="message bot-message">
+                        <p>Hello! 👋 I'm CampusAssist, your College Helpdesk Assistant. How can I help you today?</p>
+                    </div>
+                    <div class="message-time">Just now</div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- ==========================================
+             Input Area
+        =========================================== -->
+        <div class="input-area">
+            <input
+                type="text"
+                id="user-input"
+                placeholder="Type your question..."
+                autocomplete="off"
+                aria-label="Type your question"
+            />
+            <button id="send-btn" type="button" aria-label="Send message">
+                <span class="send-text">Send</span>
+                <span class="send-icon" aria-hidden="true">➤</span>
+            </button>
+        </div>
+
+    </div>
+
+    <!-- JavaScript -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+
+</html>
